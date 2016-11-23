@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" title="Tip Calculator" id="wYi-Kj-pZP">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Qi7-dI-mYu">
                             <connections>
-                                <segue destination="YHm-PL-Fxn" kind="presentation" id="UfJ-aK-SkM"/>
+                                <segue destination="44Y-fm-Fbb" kind="show" identifier="editSettings" id="O8C-8C-Jax"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,18 +140,31 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="editTip:" destination="44Y-fm-Fbb" eventType="editingChanged" id="poe-2P-6mN"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Tip Settings" id="rLS-0E-WYP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vhs-7p-9T4"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vhs-7p-9T4">
+                            <connections>
+                                <action selector="cancel:" destination="44Y-fm-Fbb" id="x4s-Gc-YK8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Oi2-q1-KFV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cancel" destination="Vhs-7p-9T4" id="Xm4-GZ-bU1"/>
+                        <outlet property="done" destination="Oi2-q1-KFV" id="mWa-sN-FqI"/>
+                        <outlet property="editText" destination="ErT-J8-b05" id="aTc-fG-Ne0"/>
+                        <outlet property="tipControl" destination="j7X-Kb-CGp" id="mHe-zj-shq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dG-5Z-zPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845.5999999999999" y="129.98500749625188"/>
+            <point key="canvasLocation" x="3048.8000000000002" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZbC-hh-u3y">
@@ -172,22 +185,25 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="kne-jK-bba">
+        <scene sceneID="Wnq-yh-w7G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YHm-PL-Fxn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QV0-vF-qZZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IqS-rR-zaE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2d-dg-rCe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="44Y-fm-Fbb" kind="relationship" relationship="rootViewController" id="iyi-Zy-h61"/>
+                        <segue destination="44Y-fm-Fbb" kind="relationship" relationship="rootViewController" id="l2l-dq-hKe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XgX-o4-Ffd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eK4-nr-5BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906.4000000000001" y="129.98500749625188"/>
+            <point key="canvasLocation" x="1986" y="464"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="l2l-dq-hKe"/>
+    </inferredMetricsTieBreakers>
 </document>

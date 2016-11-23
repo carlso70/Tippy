@@ -14,7 +14,7 @@
 		612431B71DE3EF8600B93820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612431B51DE3EF8600B93820 /* LaunchScreen.storyboard */; };
 		612431C21DE3EF8600B93820 /* tippyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612431C11DE3EF8600B93820 /* tippyTests.swift */; };
 		612431CD1DE3EF8600B93820 /* tippyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612431CC1DE3EF8600B93820 /* tippyUITests.swift */; };
-		612CB1D21DE56A7000FDEA9C /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CB1D11DE56A7000FDEA9C /* settingsViewController.swift */; };
+		612CB1D21DE56A7000FDEA9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CB1D11DE56A7000FDEA9C /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		612431C81DE3EF8600B93820 /* tippyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		612431CC1DE3EF8600B93820 /* tippyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippyUITests.swift; sourceTree = "<group>"; };
 		612431CE1DE3EF8600B93820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		612CB1D11DE56A7000FDEA9C /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		612CB1D11DE56A7000FDEA9C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +101,11 @@
 			children = (
 				612431AC1DE3EF8600B93820 /* AppDelegate.swift */,
 				612431AE1DE3EF8600B93820 /* ViewController.swift */,
+				612CB1D11DE56A7000FDEA9C /* SettingsViewController.swift */,
 				612431B01DE3EF8600B93820 /* Main.storyboard */,
 				612431B31DE3EF8600B93820 /* Assets.xcassets */,
 				612431B51DE3EF8600B93820 /* LaunchScreen.storyboard */,
 				612431B81DE3EF8600B93820 /* Info.plist */,
-				612CB1D11DE56A7000FDEA9C /* settingsViewController.swift */,
 			);
 			path = tippy;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			files = (
 				612431AF1DE3EF8600B93820 /* ViewController.swift in Sources */,
 				612431AD1DE3EF8600B93820 /* AppDelegate.swift in Sources */,
-				612CB1D21DE56A7000FDEA9C /* settingsViewController.swift in Sources */,
+				612CB1D21DE56A7000FDEA9C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

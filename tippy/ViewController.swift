@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         // Dismisses keyborad on tap
         view.endEditing(true)
     }
-    
+   
     @IBAction func tipControlChanged(_ sender: Any) {
         self.calculateTip(Any)
     }
@@ -46,5 +46,13 @@ class ViewController: UIViewController {
         
     }
 
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSettings" {
+            let settingsController = segue.destination as! SettingsViewController
+            
+            settingsController.tipPercentages = self.tipPercentages
+        }
+    }
 }
 
