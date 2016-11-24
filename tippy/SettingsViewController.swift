@@ -40,6 +40,10 @@ class SettingsViewController: UIViewController {
         dismiss(animated: true, completion: nil);
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+    // MARK: Edit Tip
     @IBAction func editTip(_ sender: Any) {
         if let tip = (Double)(editText.text!) {
             tipPercentages[tipControl.selectedSegmentIndex] = tip/100
@@ -47,6 +51,8 @@ class SettingsViewController: UIViewController {
             tipControl.setTitle("\(editText.text!)%", forSegmentAt: tipControl.selectedSegmentIndex)
         }
     }
+    
+    
     
     
 }

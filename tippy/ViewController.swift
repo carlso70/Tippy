@@ -15,11 +15,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
 
-    let tipPercentages = [0.18, 0.2, 0.25]
+    var tipPercentages = [0.18, 0.2, 0.25]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        updateTipControl()
+    }
+    
+    func updateTipControl() {
+        if tipPercentages.count != 3 {
+            print("ERROR TIP PERCENTAGES COUNT IS != 3")
+            return
+        }
+        
+        for index in 0...2 {
+            let title = String.init(format: "%2d%%", (Int)(tipPercentages[index] * 100))
+            tipControl.setTitle(title, forSegmentAt: index)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,10 +62,22 @@ class ViewController: UIViewController {
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSettings" {
+            /*
+            let controller = segue.destination as! UINavigationController
+            let settingsController = controller.viewControllers.first as! SettingsViewController
+            */
             let settingsController = segue.destination as! SettingsViewController
             
             settingsController.tipPercentages = self.tipPercentages
         }
     }
+    
+    @IBAction func unwindToTipView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? SettingsViewController{
+            tipPercentages = sourceViewController.tipPercentages
+            updateTipControl()
+        }
+    }    
+    
 }
 

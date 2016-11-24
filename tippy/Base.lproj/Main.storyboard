@@ -40,7 +40,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-LT-eAH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-LT-eAH">
                                 <rect key="frame" x="213" y="100" width="146" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" title="Tip Calculator" id="wYi-Kj-pZP">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Qi7-dI-mYu">
                             <connections>
-                                <segue destination="44Y-fm-Fbb" kind="show" identifier="editSettings" id="O8C-8C-Jax"/>
+                                <segue destination="44Y-fm-Fbb" kind="show" identifier="editSettings" id="3QU-B9-rym"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,6 +116,8 @@
         <!--Edit Tip Settings-->
         <scene sceneID="Hwc-dX-toi">
             <objects>
+                <exit id="Sps-BW-Zi6" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dG-5Z-zPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="44Y-fm-Fbb" customClass="SettingsViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfy-KR-lzE"/>
@@ -134,7 +136,7 @@
                                     <segment title="25%"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErT-J8-b05">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tip %" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErT-J8-b05">
                                 <rect key="frame" x="100" y="189" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -153,7 +155,11 @@
                                 <action selector="cancel:" destination="44Y-fm-Fbb" id="x4s-Gc-YK8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Oi2-q1-KFV"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Oi2-q1-KFV">
+                            <connections>
+                                <segue destination="Sps-BW-Zi6" kind="unwind" unwindAction="unwindToTipViewWithSender:" id="w0K-dN-TJB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cancel" destination="Vhs-7p-9T4" id="Xm4-GZ-bU1"/>
@@ -162,9 +168,8 @@
                         <outlet property="tipControl" destination="j7X-Kb-CGp" id="mHe-zj-shq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1dG-5Z-zPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3048.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2804" y="151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZbC-hh-u3y">
@@ -185,25 +190,25 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Wnq-yh-w7G">
+        <scene sceneID="7IQ-pW-D2h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QV0-vF-qZZ" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yI9-Q3-UFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DlE-kr-JLt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2d-dg-rCe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eac-Bu-IaW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="44Y-fm-Fbb" kind="relationship" relationship="rootViewController" id="l2l-dq-hKe"/>
+                        <segue destination="44Y-fm-Fbb" kind="relationship" relationship="rootViewController" id="tOp-FQ-By1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eK4-nr-5BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986" y="464"/>
+            <point key="canvasLocation" x="2004" y="496"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l2l-dq-hKe"/>
+        <segue reference="3QU-B9-rym"/>
     </inferredMetricsTieBreakers>
 </document>
