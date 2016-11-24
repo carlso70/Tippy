@@ -37,10 +37,15 @@ class SettingsViewController: UIViewController {
     // MARK: Navigation
     
     @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInSettingsMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddSettingsMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            // Pops the current view controller off the navigation stack of navigationController, and performs a transition
+            navigationController!.popViewController(animated: true)
+        }
     }
     
     // MARK: Edit Tip
