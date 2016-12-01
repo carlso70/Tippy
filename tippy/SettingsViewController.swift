@@ -40,7 +40,7 @@ class SettingsViewController: UIViewController {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInSettingsMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddSettingsMode {
+        if isPresentingInSettingsMode {
             dismiss(animated: true, completion: nil)
         } else {
             // Pops the current view controller off the navigation stack of navigationController, and performs a transition
