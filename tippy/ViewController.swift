@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var blackBar: UIView!
 
     var tipPercentages = [0.18, 0.2, 0.25]
     
@@ -21,6 +22,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         updateTipControl()
+       
+    }
+   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        billField.becomeFirstResponder()
+        
+        self.blackBar.alpha = 0
+        UIView.animate(withDuration: 1.5, animations: {
+            // This causes first view to fade in and second view to fade out
+            self.blackBar.alpha = 1
+        }) 
     }
     
     func updateTipControl() {
@@ -42,7 +56,7 @@ class ViewController: UIViewController {
 
     @IBAction func onTap(_ sender: Any) {
         // Dismisses keyborad on tap
-        view.endEditing(true)
+        //view.endEditing(true)
     }
    
     @IBAction func tipControlChanged(_ sender: Any) {
@@ -57,6 +71,18 @@ class ViewController: UIViewController {
         tipLabel.text = String.init(format: "$%.2f", tip)
         totalLabel.text = String.init(format: "$%.2f", total)
         
+        animateBar()
+    }
+    
+    // MARK: Animate
+    func animateBar() {
+        
+        self.blackBar.alpha = 0
+        
+        UIView.animate(withDuration: 0.8, animations: {
+            // This causes first view to fade in and second view to fade out
+            self.blackBar.alpha = 1
+        }) 
     }
 
     // MARK: Navigation

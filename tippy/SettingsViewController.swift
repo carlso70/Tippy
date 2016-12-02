@@ -30,6 +30,12 @@ class SettingsViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        editText.becomeFirstResponder()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.viewDidLoad()
     }

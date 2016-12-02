@@ -38,7 +38,8 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ATr-Si-jPN">
                                 <rect key="frame" x="16" y="267" width="343" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-LT-eAH">
                                 <rect key="frame" x="213" y="100" width="146" height="30"/>
@@ -74,11 +75,13 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K1F-Ym-bBL">
                                 <rect key="frame" x="16" y="358" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="18%"/>
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
+                                <color key="tintColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="tipControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="BEs-xF-Gcx"/>
                                 </connections>
@@ -99,6 +102,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="biZ-LT-eAH" id="R0y-Pl-vS2"/>
+                        <outlet property="blackBar" destination="ATr-Si-jPN" id="UK3-fU-PCw"/>
                         <outlet property="tipControl" destination="K1F-Ym-bBL" id="YKt-Pk-J14"/>
                         <outlet property="tipLabel" destination="vLk-Sr-yp4" id="K4Y-8t-x7C"/>
                         <outlet property="totalLabel" destination="9Yj-C6-HAG" id="s45-7p-hBG"/>
@@ -116,8 +120,6 @@
         <!--Edit Tip Settings-->
         <scene sceneID="Hwc-dX-toi">
             <objects>
-                <exit id="Sps-BW-Zi6" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1dG-5Z-zPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="44Y-fm-Fbb" customClass="SettingsViewController" customModule="tippy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfy-KR-lzE"/>
@@ -130,11 +132,13 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j7X-Kb-CGp">
                                 <rect key="frame" x="16" y="121" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="18%"/>
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
+                                <color key="tintColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Tip %" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErT-J8-b05">
                                 <rect key="frame" x="100" y="189" width="174" height="30"/>
@@ -168,6 +172,8 @@
                         <outlet property="tipControl" destination="j7X-Kb-CGp" id="mHe-zj-shq"/>
                     </connections>
                 </viewController>
+                <exit id="Sps-BW-Zi6" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dG-5Z-zPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2804" y="151"/>
         </scene>
@@ -192,7 +198,6 @@
         <!--Navigation Controller-->
         <scene sceneID="7IQ-pW-D2h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yI9-Q3-UFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DlE-kr-JLt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eac-Bu-IaW">
@@ -204,6 +209,7 @@
                         <segue destination="44Y-fm-Fbb" kind="relationship" relationship="rootViewController" id="tOp-FQ-By1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yI9-Q3-UFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2004" y="496"/>
         </scene>
