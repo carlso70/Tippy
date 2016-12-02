@@ -16,7 +16,7 @@ Time spent: **4** hours spent in total
 
 Here's a walkthrough of implemented user stories:
 
-[Walkthrough](http://i.imgur.com/1W1sIoj.gifv)
+[Walkthrough](http://i.imgur.com/6bjzW1z.gifv)
 
 ## Notes
 
