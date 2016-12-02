@@ -1,5 +1,5 @@
 
-# Pre-work - *Name of App Here*
+# *Tippy*
 
 **Tippy** is a tip calculator application for iOS.
 
